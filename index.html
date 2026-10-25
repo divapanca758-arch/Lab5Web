@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            line-height: 1.6;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
 
+        section {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px 0;
+            max-width: 250px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .hasil {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+   <label for="bilangan">Masukkan bilangan bulat:</label>
+<input type="number" id="bilangan" step="1">
+<button type="button" onclick="cekBilangan()">Periksa</button>
+<p id="hasilBilangan"></p>
+  <h1>Pengenalan JavaScript</h1>
+  <p id="pesan">Konten awal.</p>
+
+<button type="button" onclick="ubahWarnaLatar('lightgreen')">Latar Hijau</button>
+<button type="button" onclick="ubahWarnaLatar('white')">Latar Putih</button>
+<button type="button" onclick="ubahWarnaLatar('lightyellow')">Latar Kuning</button>
+
+<h3>Daftar Menu Makanan</h3>
+<label><input type="checkbox" class="menu" value="5000"> Ayam Goreng — Rp5.000</label><br>
+<label><input type="checkbox" class="menu" value="500"> Tempe — Rp500</label><br>
+<label><input type="checkbox" class="menu" value="2500"> Telur Dadar — Rp2.500</label><br>
+<p>Total: Rp<span id="total">0</span></p>
+
+  <!-- Mini Project mulai di sini -->
+  <h3>Mini Project: Kalkulator Nilai Mahasiswa</h3>
+  <label for="tugas">Nilai Tugas:</label>
+  <input type="number" id="tugas" min="0" max="100"><br>
+  <label for="uts">Nilai UTS:</label>
+  <input type="number" id="uts" min="0" max="100"><br>
+  <label for="uas">Nilai UAS:</label>
+  <input type="number" id="uas" min="0" max="100"><br>
+  <button type="button" onclick="prosesNilai()">Hitung</button>
+
+  <p id="pesanError" style="color: red;"></p>
+  <p>Nilai Akhir: <span id="hasilAkhir">-</span></p>
+  <p>Predikat: <span id="hasilPredikat">-</span></p>
+  <p>Status: <span id="hasilStatus">-</span></p>
+
+  <script src="script.js"></script>
+</body>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 1</title>
+</head>
+<body>
+    <h2>Penjumlahan Dua Angka</h2>
+
+    <script>
+        let angka1 = Number(prompt("Masukkan angka pertama:"));
+        let angka2 = Number(prompt("Masukkan angka kedua:"));
+
+        let hasil = angka1 + angka2;
+
+        document.write("Angka pertama: " + angka1 + "<br>");
+        document.write("Angka kedua: " + angka2 + "<br>");
+        document.write("Hasil penjumlahan: " + hasil);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 7</title>
+</head>
+<body>
+    <h2>Tabel Perkalian 7</h2>
+
+    <script>
+        for (let i = 1; i <= 10; i++) {
+            document.write("7 x " + i + " = " + (7 * i) + "<br>");
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 8</title>
+</head>
+<body>
+    <h2>Cek Bilangan Genap</h2>
+
+    <script>
+        function cekGenap(angka) {
+            return angka % 2 === 0;
+        }
+
+        let angka = Number(prompt("Masukkan sebuah angka:"));
+
+        if (cekGenap(angka)) {
+            document.write(angka + " adalah bilangan genap.");
+        } else {
+            document.write(angka + " adalah bilangan ganjil.");
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan 9</title>
+</head>
+<body>
+    <h2>Form Data Mahasiswa</h2>
+
+    <form onsubmit="return validasi()">
+        <label>Nama:</label><br>
+        <input type="text" id="nama" required>
+        <br><br>
+
+        <label>NIM:</label><br>
+        <input type="text" id="nim" required>
+        <br><br>
+
+        <button type="submit">Kirim</button>
+    </form>
+
+    <script>
+        function validasi() {
+            let nama = document.getElementById("nama").value.trim();
+            let nim = document.getElementById("nim").value.trim();
+
+            if (nama === "" || nim === "") {
+                alert("Semua kolom wajib diisi!");
+                return false;
+            }
+
+            alert("Data berhasil dikirim!");
+            return false;
+        }
+    </script>
+</body>
+</html>
